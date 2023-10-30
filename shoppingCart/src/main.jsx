@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Products } from "./components/Products";
 import { ErrorPage } from "./components/errorPage";
 import { Cart } from "./components/Cart";
+import { productLoader, App } from "./components/App.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-
     children: [
       {
         errorElement: <ErrorPage />,
@@ -20,6 +19,7 @@ const router = createBrowserRouter([
           {
             path: "/products",
             element: <Products />,
+            loader: productLoader,
           },
           {
             path: "/cart",
