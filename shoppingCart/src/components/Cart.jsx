@@ -65,7 +65,7 @@ function Cart() {
           <div key={item.id}>
             <div className={styles.container}>
               <img src={item.image} className={styles.image} alt="image" />
-              <div>{item.title}</div>
+              <div className={styles.title}>{item.title}</div>
               <div>${item.price}</div>
               <div className={styles.buttonAndDelete}>
                 <input

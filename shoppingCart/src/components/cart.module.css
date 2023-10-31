@@ -73,6 +73,10 @@
 .total {
   font-size: 30px;
 }
+.title {
+  width: 500px;
+  display: flex;
+}
 @media (max-width: 768px) {
   .container {
     height: 500px;
