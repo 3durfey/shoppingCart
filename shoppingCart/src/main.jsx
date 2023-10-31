@@ -2,10 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Products } from "./components/Products";
+import {
+  Products,
+  productsLoader as loaderAllProducts,
+  loadProduct,
+} from "./components/Products";
 import { ErrorPage } from "./components/errorPage";
 import { Cart } from "./components/Cart";
-import { productLoader, App } from "./components/App.jsx";
+import { App } from "./components/App.jsx";
+import { Home } from "./components/Home.jsx";
+import { Product } from "./components/Product.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const router = createBrowserRouter([
   {
@@ -16,18 +23,20 @@ const router = createBrowserRouter([
       {
         errorElement: <ErrorPage />,
         children: [
-          {
-            path: "/products",
-            element: <Products />,
-            loader: productLoader,
-          },
+          { index: true, element: <Home /> },
           {
             path: "/cart",
             element: <Cart />,
           },
           {
-            path: "/products/:id",
+            path: "/products/",
             element: <Products />,
+            loader: loaderAllProducts,
+          },
+          {
+            path: "/products/:id",
+            element: <Product />,
+            loader: loadProduct,
           },
           {
             path: "/cart/:id",

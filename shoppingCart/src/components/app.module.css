@@ -1,5 +1,5 @@
 .body {
-  background-color: blue;
+  background-color: white;
   flex-grow: 1;
   display: flex;
   flex-flow: row wrap;
