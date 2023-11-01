@@ -38,7 +38,6 @@
 .top {
   display: flex;
   flex-direction: row;
-  background-image: url("./src/images/pants.jpg");
   background-repeat: no-repeat;
   background-position: center;
   height: 300px;

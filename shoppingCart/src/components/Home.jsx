@@ -2,11 +2,12 @@ import styles from "./home.module.css";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
+import pants from "/src/images/pants.jpg";
 
 function Home() {
   return (
     <div className={styles.main}>
-      <div className={styles.top}>
+      <div className={styles.top} style={{ backgroundImage: `url(${pants})` }}>
         <button className={styles.shopButton}>Shop Now</button>
       </div>
       <div className={styles.middle}>
