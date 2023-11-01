@@ -4,6 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import pants from "/src/images/pants.jpg";
 import cat1 from "/src/images/cat1.jpg";
+import cat2 from "/src/images/cat2.jpg";
 function Home() {
   return (
     <div className={styles.main}>
@@ -20,22 +21,14 @@ function Home() {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className={styles.imageCarousel}
-              src="./src/images/pants.jpg"
-              alt="image"
-            />
+            <img className={styles.imageCarousel} src={cat2} alt="image" />
             <Carousel.Caption>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className={styles.imageCarousel}
-              src="./src/images/cat2.jpg"
-              alt="image"
-            />
+            <img className={styles.imageCarousel} src={pants} alt="image" />
             <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>
