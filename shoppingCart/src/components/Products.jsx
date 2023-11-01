@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./loader.module.css";
+import styles from "./products.module.css";
 import localforage from "localforage";
 import { addToCart } from "./Cart";
 import { useLoaderData, useNavigation, NavLink } from "react-router-dom";

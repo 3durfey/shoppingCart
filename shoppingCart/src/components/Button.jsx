@@ -2,6 +2,7 @@ import { addToCart } from "./Cart";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import { useState, useEffect } from "react";
+import styles from "./button.module.css";
 
 function ItemButton({ product }) {
   const [show, setShow] = useState(false);
@@ -25,9 +26,11 @@ function ItemButton({ product }) {
       <Button variant="danger" onClick={() => addToCartClicked(product)}>
         Add to Cart
       </Button>
-      <Alert show={show} key={"primary"} variant={"primary"}>
-        Added to Cart!
-      </Alert>
+      <div className={styles.alert}>
+        <Alert show={show} key={"primary"} variant={"primary"}>
+          Added to Cart!
+        </Alert>
+      </div>
     </>
   );
 }

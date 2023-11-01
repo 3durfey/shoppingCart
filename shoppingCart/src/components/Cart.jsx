@@ -47,9 +47,7 @@ function Cart() {
     let total = 0;
     cart.map((item) => {
       total += item.quantity * item.price;
-      console.log(item.quantity);
     });
-    console.log(total);
     setTotal(total);
   }, [cart]);
   async function cartNumChange(newNum, item) {
@@ -58,35 +56,38 @@ function Cart() {
   }
 
   return (
-    <div>
+    <div className={styles.cartContainer}>
       <h1 className={styles.cartHeader}>Cart</h1>
-      {cart.map((item) => {
-        return (
-          <div key={item.id}>
-            <div className={styles.container}>
-              <img src={item.image} className={styles.image} alt="image" />
-              <div className={styles.title}>{item.title}</div>
-              <div>${item.price}</div>
-              <div className={styles.buttonAndDelete}>
-                <input
-                  className={styles.cartNumber}
-                  type="number"
-                  min="1"
-                  onChange={(e) => cartNumChange(e.target.value, item)}
-                  defaultValue={item.quantity}
-                ></input>
-                <Button
-                  className={styles.deleteButton}
-                  variant="danger"
-                  onClick={() => cartDelete(item)}
-                >
-                  X
-                </Button>
+
+      <div className={styles.cart}>
+        {cart.map((item) => {
+          return (
+            <div key={item.id}>
+              <div className={styles.container}>
+                <img src={item.image} className={styles.image} alt="image" />
+                <div className={styles.title}>{item.title}</div>
+                <div>${item.price}</div>
+                <div className={styles.buttonAndDelete}>
+                  <input
+                    className={styles.cartNumber}
+                    type="number"
+                    min="1"
+                    onChange={(e) => cartNumChange(e.target.value, item)}
+                    defaultValue={item.quantity}
+                  ></input>
+                  <Button
+                    className={styles.deleteButton}
+                    variant="danger"
+                    onClick={() => cartDelete(item)}
+                  >
+                    X
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       <div className={styles.buttonAndDelete}>
         <Button variant="outline-secondary" className={styles.checkout}>
           Checkout

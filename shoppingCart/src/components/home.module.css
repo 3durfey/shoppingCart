@@ -1,0 +1,102 @@
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.middle {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shopButton {
+  height: 50px;
+  min-width: 200px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: red;
+  opacity: 0.75;
+  border: none;
+  box-shadow: 2px 4px 20px 2px red;
+  position: absolute;
+  border-radius: 10px;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* adjust the left position of the button */
+  transform: translate(-50%, -50%); /* center the button */
+}
+.shopButton:hover {
+  border: solid black;
+}
+.image {
+  max-width: 400px;
+}
+.imageCarousel {
+  width: 100vw;
+  height: auto;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  background-image: url("./src/images/pants.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  background-size: 2500px;
+  justify-self: center;
+  align-items: center;
+  position: relative;
+}
+.bottom {
+  padding: 20px;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card {
+  background-color: red;
+}
+@media screen and (min-width: 2500px) {
+  .middle {
+    background-size: 4000px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .middle {
+    background-size: 1000px;
+  }
+  .bottom {
+    flex-direction: column;
+    min-width: 300px;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
