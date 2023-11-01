@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import pants from "/src/images/pants.jpg";
-
+import cat1 from "/src/images/cat1.jpg";
 function Home() {
   return (
     <div className={styles.main}>
@@ -13,11 +13,7 @@ function Home() {
       <div className={styles.middle}>
         <Carousel fade>
           <Carousel.Item>
-            <img
-              className={styles.imageCarousel}
-              src="./src/images/cat1.jpg"
-              alt="image"
-            />
+            <img className={styles.imageCarousel} src={cat1} alt="image" />
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
